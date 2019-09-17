@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Create a new client access token (JWT) to query the Connect API or Nodes.
+#
+# Usage example:
+#
+#   export CLIENT_ACCESS_TOKEN=$(USER=xxx PASS=xxx ./create-client-access-token | jq -r .accessToken)
+
+curl -s -u "$USER:$PASS" -w "\n" -X POST https://accounts.bloqclouddev.com/auth

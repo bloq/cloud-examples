@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Get the current block number from a Cloud Ethereum node using JWT
+# authentication.
+
+curl \
+  -d '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":"0"}' \
+  -H "Authorization: Bearer $CLIENT_ACCESS_TOKEN" \
+  -H "Content-Type: application/json" \
+  -k \
+  -w "\n" \
+  -X POST \
+  "https://$IP:8545"
